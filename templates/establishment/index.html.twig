@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PapyFactice - Liste des résultats{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 1000px; font: 18px sans-serif; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Liste des résultats</h1>
+    
+    <ul>
+        {% for establishment in establishments %}
+            <li>{{ establishment.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
