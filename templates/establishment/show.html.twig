@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PapyFactice - Liste des résultats{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 1000px; font: 18px sans-serif; }
+    
+    /* Police d'écriture : gras/italique */ 
+    .font-italic { font-style: italic !important };
+    .font-bold { font-weight: 700 !important };
+
+    
+</style>
+
+<div class="example-wrapper">
+    <h1 class="text-center">{{ establishment.name}}</h1>
+    <p class="font-italic">{{ establishment.type }}</p>
+    <p>📍 {{establishment.address}}, {{ establishment.city }} ({{ establishment.zip }})</p>
+    <img src="https://via.placeholder.com/800x200.png?text={{ establishment.name }}" style="display: block;" alt="Photo de {{ establishment.name }}">
+
+    <a href="{{ path('app_establishment')}}">Revenir à la liste de tous les résultats</a>
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}PapyFactice - Liste des résultats{% endblock %}
+{% block title %}PapyFactice - Liste des EHPAD{% endblock %}
 
 {% block body %}
 <style>
@@ -14,18 +14,18 @@
 </style>
 
 <div class="example-wrapper">
-    <h1 class="text-center">Liste des résultats ({{ establishments|length }})</h1>
-    
+    <h1 class="text-center">Liste des EHPAD ({{ establishments|length }})</h1>
+
     <p>Trier :</p>
     <ul>
         <li>
-            <a href="{{ path('app_establishment_ehpad')}}">EHPAD</a>
+            <a href="{{ path('app_establishment')}}">Tous les résultats</a>
         </li>
         <li>
             <a href="{{ path('app_establishment_rss')}}">Résidence Services Seniors</a>
         </li>
     </ul>
-
+    
     <ul>
         {% for establishment in establishments %}
             <li>
