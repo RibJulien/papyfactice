@@ -19,5 +19,7 @@
     <p>📍 {{establishment.address}}, {{ establishment.city }} ({{ establishment.zip }})</p>
     <img src="https://via.placeholder.com/800x200.png?text={{ establishment.name }}" style="display: block;" alt="Photo de {{ establishment.name }}">
 
+    {{ form(form) }}
+    
     <a href="{{ path('app_establishment')}}">Revenir à la liste de tous les résultats</a>
 {% endblock %}

@@ -28,6 +28,9 @@ class Establishment
     #[ORM\Column(length: 100)]
     private ?string $city = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class Establishment
     public function setCity(string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }
