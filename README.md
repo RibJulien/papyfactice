@@ -74,4 +74,3 @@ Puis vous rendre dans votre navigateur à cette url pour accéder au projet :
 
 - [ ]  Passer toutes les fiches établissements en slug.
 - [ ]  Trier par type sans changement de page, en restant toujours sur la page d'accueil.
-- [ ]  
