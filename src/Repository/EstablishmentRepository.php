@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Establishment;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\DBAL\Query;
+use Doctrine\ORM\Query as ORMQuery;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -37,6 +39,66 @@ class EstablishmentRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * @return Establishment[]
+     */
+    public function findContainsName(string $name): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p FROM App\Entity\Establishment p WHERE p.name LIKE :name ORDER BY p.name ASC'
+        )->setParameter('name', '%'.$name.'%');
+
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+
+    /**
+     * @return Establishment[]
+     */
+    public function findContainsCity(string $city): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p FROM App\Entity\Establishment p WHERE p.city LIKE :city ORDER BY p.city ASC'
+        )->setParameter('city', '%'.$city.'%');
+
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+
+    /**
+     * @return Establishment[]
+     */
+    public function findContainsAddress(string $address): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p FROM App\Entity\Establishment p WHERE p.address LIKE :address ORDER BY p.address ASC'
+        )->setParameter('address', '%'.$address.'%');
+
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+
+    /**
+     * @return Establishment[]
+     */
+    public function findContainsZip(string $zip): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p FROM App\Entity\Establishment p WHERE p.zip LIKE :zip ORDER BY p.zip ASC'
+        )->setParameter('zip', '%'.$zip.'%');
+
+        // returns an array of Product objects
+        return $query->getResult();
     }
 
 //    /**
